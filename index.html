@@ -1,21 +1,136 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-  </head>
-  <body>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hello Bulma!</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+
+  <style>
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: -50px;
+      width: 20%;
+    }
+
+    html {
+      background-color: rgb(22, 22, 22);
+      background-image: linear-gradient(90deg, rgba(104, 136, 184, 0.5) 0%, rgba(100, 100, 100, 0.5) 80%);
+    }
+
+    p {font-family: 'Courier New', Courier, monospace;}
+
+    a:link {
+      color: white;
+      font-style: italic;
+      font-weight: bold;
+      background-color: transparent;
+      text-decoration: none;
+    }
+
+    a:visited {
+      color: white;
+      background-color: transparent;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: black;
+      background-color: transparent;
+      text-decoration: underline;
+    }
+
+    a:active {
+      color: white;
+      background-color: transparent;
+      text-decoration: underline;
+    }
+
+    button {
+      width: 200px;
+      margin-left: -30px;
+      background: none;
+      border: none;
+      color: #333;
+      font-size: 40px;
+      cursor: pointer;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    button span {
+      margin: -6px;
+      padding: 0;
+    }
+
+    #neon:hover span {
+      animation: flicker 1s linear forwards;
+    }
+
+    @keyframes flicker {
+      0% {
+        color: #333;
+      }
+      5%,
+      15%,
+      25%,
+      30%,
+      100% {
+        color: #fff;
+        text-shadow: 0px 0px 25px cyan;
+      }
+
+      10%,
+      20% {
+        color: #333;
+        text-shadow: none;
+      }
+    }
+
+    #neon:focus {
+      outline: none;
+    }
+  </style>
+</head>
+
+<body>
+
   <section class="section">
-    <div class="container">
-      <h1 class="title">
-        Hello World
-      </h1>
-      <p class="subtitle">
-        My first website with <strong>Bulma</strong>!
+    <img src="sungsong1.png" alt="sungsong">
+  </section>
+
+  <section class="hero" >
+    <div class="hero-body" style="padding-bottom: 15%;">
+      <center>
+        <p class="title" id="hello" style="color:white">
+          Hello I am
+        <button id="neon" onclick="turnTheLightsOn()">
+          <span id="s">S</span>
+          <span id="u">u</span>
+          <span id="n">n</span>
+          <span id="g">g</span>
+        </button>
       </p>
+        <hr>
+        <p class="subtitle" id="threeIntro"style="color:white">
+          a student at <a href="https://www.unc.edu/">UNC</a>, <br>
+          an executive of <a href="https://kasa.web.unc.edu/">KASA</a>, <br>
+          and a brother of <a href="https://unclambdas.com/">ΛΦΕ</a>. <br>
+        </p>
+      </center>
     </div>
   </section>
-  </body>
+
+  <script>
+    function turnTheLightsOn() {
+      document.body.style.backgroundColor = "white";
+      document.getElementById("hello").style.color = "black";
+      document.getElementById("threeIntro").style.color = "black";
+      document.links.style.color = "black";
+    }
+    </script>
+</body>
+
 </html>

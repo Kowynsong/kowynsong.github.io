@@ -17,8 +17,7 @@
     }
 
     html {
-      background-color: rgb(22, 22, 22);
-      background-image: linear-gradient(90deg, rgba(104, 136, 184, 0.5) 0%, rgba(100, 100, 100, 0.5) 80%);
+      background-image: radial-gradient(circle at center, rgb(0, 0, 0), rgb(97, 97, 97));
     }
 
     p {
@@ -106,45 +105,74 @@
 
   <section class="hero">
     <div class="hero-body" style="padding-bottom: 15%;">
+
       <center>
+        <!-- Greeting -->
         <p class="title" id="hello" style="color:white">
           Hello I am
-          <button id="neon" onclick="turnTheLightsOn()">
+          <button id="neon" onclick="lights()">
             <span id="s">S</span>
             <span id="u">u</span>
             <span id="n">n</span>
             <span id="g">g</span>
           </button>
         </p>
+
         <hr>
+
+        <!-- Introduction -->
         <p class="subtitle" id="threeIntro" style="color:white">
-          a student at <a href="https://www.unc.edu/" id="unc">UNC</a>, <br>
-          an executive of <a href="https://kasa.web.unc.edu/" id="kasa">KASA</a>, <br>
-          and a brother of <a href="https://unclambdas.com/" id="lfe">ΛΦΕ</a>. <br>
+          <a href="https://www.unc.edu/" id="unc">UNC</a> alumni |
+          former <a href="https://www.instagram.com/unc_kasa/?hl=en" id="kasa">KASA</a> exec |
+          brother of <a href="https://unclambdas.com/" id="lfe">ΛΦΕ</a>.
         </p>
+
+        <!-- Resume -->
         <a href="sungSongResume.pdf" id="resume">Resume</a>
+
       </center>
+
     </div>
   </section>
 
   <script>
-    function turnTheLightsOn() {
+    var temp = true;
+    function lights() {
+      if (temp = true) {
+        lights2();
+      } else {
+        lights3();
+      }
+    }
+
+    function lights2() {
       var image = document.getElementById('me');
-      if (image.src.match("sungsong1 copy.png")) {
-        image.src = "sungsong1.png";
+
+      if (image.src = "sungsong1.png") {
+        image.src = "sungsong.png";
+        document.body.style.backgroundImage = "radial-gradient(circle at center, rgb(97, 97, 97), rgb(0,0,0))";
       }
-      else {
-        image.src = "sungsong2copy.png";
+      temp = false;
+    }
+
+    function lights3() {
+      var image = document.getElementById('me');
+
+      if (image.src = "sungsong1.png") {
+        image.src = "sungsong.png";
+        document.body.style.backgroundImage = "radial-gradient(circle at center, rgb(0, 0, 0), rgb(97, 97, 97))";
       }
-      document.body.style.backgroundColor = "white";
-      document.getElementById("hello").style.color = "black";
-      document.getElementById("threeIntro").style.color = "black";
-      document.getElementById("unc").style.color = "black";
-      document.getElementById("kasa").style.color = "black";
-      document.getElementById("lfe").style.color = "black";
-      document.getElementById("resume").style.color = "black";
+      temp = true;
     }
   </script>
+
+  <script>
+
+  </script>
+
+  <script id="__bs_script__">//<![CDATA[
+    document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.27.4'><\/script>".replace("HOST", location.hostname));
+//]]></script>
 </body>
 
 </html>

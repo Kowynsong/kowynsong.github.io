@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sung Song</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+
+  <style>
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: -50px;
+      width: 20%;
+    }
+
+    html {
+      background-image: radial-gradient(circle at center, rgb(0, 0, 0), rgb(97, 97, 97));
+    }
+
+    p {
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    a:link {
+      color: white;
+      font-style: italic;
+      font-weight: bold;
+      background-color: transparent;
+      text-decoration: none;
+    }
+
+    a:visited {
+      color: white;
+      background-color: transparent;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: black;
+      background-color: transparent;
+      text-decoration: underline;
+    }
+
+    a:active {
+      color: white;
+      background-color: transparent;
+      text-decoration: underline;
+    }
+
+    button {
+      width: 200px;
+      margin-left: -30px;
+      background: none;
+      border: none;
+      color: #333;
+      font-size: 40px;
+      cursor: pointer;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    button span {
+      margin: -6px;
+      padding: 0;
+    }
+
+    #neon:hover span {
+      animation: flicker 1s linear forwards;
+    }
+
+    @keyframes flicker {
+      0% {
+        color: #333;
+      }
+
+      5%,
+      15%,
+      25%,
+      30%,
+      100% {
+        color: #fff;
+        text-shadow: 0px 0px 25px cyan;
+      }
+
+      10%,
+      20% {
+        color: #333;
+        text-shadow: none;
+      }
+    }
+
+    #neon:focus {
+      outline: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="section">
+    <img src="sungsong1copy.png" alt="sungsong" id="me">
+  </section>
+
+  <section class="hero">
+    <div class="hero-body" style="padding-bottom: 15%;">
+
+      <center>
+        <!-- Greeting -->
+        <p class="title" id="hello" style="color:white">
+          Hello I am
+          <button id="neon" onclick="lights()">
+            <span id="s">S</span>
+            <span id="u">u</span>
+            <span id="n">n</span>
+            <span id="g">g</span>
+          </button>
+        </p>
+
+        <hr>
+
+        <!-- Introduction -->
+        <p class="subtitle" id="threeIntro" style="color:white">
+          <a href="https://www.unc.edu/" id="unc">UNC</a> alumni |
+          former <a href="https://www.instagram.com/unc_kasa/?hl=en" id="kasa">KASA</a> exec |
+          brother of <a href="https://unclambdas.com/" id="lfe">ΛΦΕ</a>.
+        </p>
+
+        <!-- Resume -->
+        <a href="sungSongResume.pdf" id="resume">Resume | </a> 
+        <!-- COMM150 -->
+        <a href="works.html" id="works">Works | </a>
+        <a href="story.html" id="works">Story created for COMM150</a>
+
+
+      </center>
+
+    </div>
+  </section>
+
+  <script>
+    var temp = true;
+    function lights() {
+      if (temp = true) {
+        lights2();
+      } else {
+        lights3();
+      }
+    }
+
+    function lights2() {
+      var image = document.getElementById('me');
+
+      if (image.src = "sungsong1.png") {
+        image.src = "sungsong.png";
+        document.body.style.backgroundImage = "radial-gradient(circle at center, rgb(97, 97, 97), rgb(0,0,0))";
+      }
+      temp = false;
+    }
+
+    function lights3() {
+      var image = document.getElementById('me');
+
+      if (image.src = "sungsong1.png") {
+        image.src = "sungsong.png";
+        document.body.style.backgroundImage = "radial-gradient(circle at center, rgb(0, 0, 0), rgb(97, 97, 97))";
+      }
+      temp = true;
+    }
+  </script>
+
+  
+  <!-- browsersync --> 
+  <script id="__bs_script__">//<![CDATA[
+    document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.27.4'><\/script>".replace("HOST", location.hostname));
+//]]></script>
+</body>
+
+</html>
+
+<!-- NEON Feature Credits to: https://codepen.io/tanya1001/pen/zYodPaa --> 
